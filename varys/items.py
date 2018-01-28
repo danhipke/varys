@@ -8,8 +8,13 @@
 from scrapy import Item, Field
 
 
-class ProductUrlItem(Item):
+class SearchResultsItem(Item):
+    title = Field()
+    price = Field()
     url = Field()
+    facet_label = Field()
+    facet_value = Field()
+
 
 class ProductInfoItem(Item):
     title = Field()

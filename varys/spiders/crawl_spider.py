@@ -110,7 +110,7 @@ class VarysCrawlSpider(CrawlSpider):
                 url = facet_value.css('::attr(href)').extract_first().strip()
                 #print url
                 set_key = all_facet_label_text + '|||' + all_facet_value_text
-                # Probably need to fix this. Doesn't support precedence rules or hierarchical facet values with the same name
+                # TODO: Probably need to fix this. Doesn't support precedence rules or hierarchical facet values with the same name
                 if set_key not in self.seen_facet_label_value_pairs:
                     self.seen_facet_label_value_pairs.add(set_key)
                     facet_request = SplashRequest(url=url, callback=self.parse_items, endpoint='render.html',
